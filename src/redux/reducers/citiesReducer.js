@@ -28,8 +28,9 @@ const citiesReducer = (state = initialState, action) => { // requiero 2 parametr
 
         case 'FILTER_CITIES':
 
-            const cityFilter = action.payload.cities.filter(data => data.city.toLowerCase().startsWith( action.payload.value.toLowerCase().trim()) )
-
+            const cityFilter = action.payload.cities.filter(data => data.city.toLowerCase().startsWith(action.payload.value.toLowerCase().trim()))
+            // console.log(action.payload.cities)
+            // console.log(action.payload.value)
             return {
                 ...state, // toma el estado anterior
                 filter: cityFilter

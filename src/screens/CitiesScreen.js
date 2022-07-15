@@ -1,22 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, View, ScrollView, TextInput, Image, TouchableHighlight } from 'react-native';
+import { StyleSheet, View, ScrollView, TextInput, Image, TouchableHighlight, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import citiesActions from '../redux/actions/citiesActions';
 
 
-
 const CitiesScreen = (props) => {
-
 
     useEffect(() => {
 
         props.getCities()
 
         // eslint-disable-next-line
+
     }, [])
 
+    const navigation = useNavigation();
+
     const handleID = (id) => {
-        console.log('id de mi ciudad: ' + id)
+        navigation.navigate('Details', { id })
     }
 
     return (
@@ -40,8 +42,8 @@ const CitiesScreen = (props) => {
                         paddingHorizontal: 20,
                         textAlign: 'center'
                     }}
-                    defaultValue=''
                     placeholder='Search cities..'
+                    onChangeText={(val) => props.filterCities(props.cities, val)}
                 />
             </View>
 
@@ -51,27 +53,43 @@ const CitiesScreen = (props) => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    paddingHorizontal: 30,
+                    paddingHorizontal: 25,
+                    marginBottom: 40
                 }}
             >
                 {
-                    props.cities?.map(city => {
+                    props.filter.length !== 0
+                        ?
+                        props.filter?.map(city => {
 
-                        return (
-                            <TouchableHighlight
-                                key={city._id}
-                                onPress={() => handleID(city._id)}
-                            >
+                            return (
+                                <TouchableHighlight
+                                    key={city._id}
+                                    onPress={() => handleID(city._id)}
+                                >
 
-                                <Image
-                                    source={{ uri: city.image }}
-                                    style={{ width: 400, height: 200, borderRadius: 20, marginBottom: 25 }}
-                                />
-                            </TouchableHighlight>
-                        )
+                                    <Image
+                                        source={{ uri: city.image }}
+                                        style={{ width: 400, height: 200, borderRadius: 20, marginBottom: 25 }}
+                                    />
+                                </TouchableHighlight>
+                            )
 
 
-                    })
+                        })
+
+                        :
+                        
+                        <Text
+                            style={{
+                                color: '#facc15',
+                                fontSize: 20,
+                                textAlign: 'center',
+                                fontWeight: 'bold',
+                                textTransform: 'uppercase',
+                                marginTop: 30
+                            }}
+                        >No search results</Text>
                 }
 
             </View>

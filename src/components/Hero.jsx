@@ -1,6 +1,5 @@
 import { Button, StyleSheet, Text, View, Alert, ScrollView, Image } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
-import CitiesScreen from '../screens/CitiesScreen';
 
 const Hero = () => {
 

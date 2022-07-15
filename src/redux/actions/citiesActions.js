@@ -26,6 +26,8 @@ const citiesActions = {
 
     filterCities: (cities, value) => {
 
+        // console.log(cities)
+        // console.log(value)
         return (dispatch, getState) => {
             dispatch({ type: 'FILTER_CITIES', payload: { cities, value } })
         }
