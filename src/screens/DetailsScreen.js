@@ -63,12 +63,13 @@ const DetailsScreen = (props) => {
 
                     <CardAction
                       separator={true}
-                      inColumn={false}>
-                      <CardButton
+                      inColumn={false}
+                      >
+                      {/* <CardButton
                         onPress={() => { }}
                         title="like"
                         color="blue"
-                      />
+                      /> */}
                       <CardButton
                         onPress={() => { viewActivityAndComment(tinerary) }}
                         title="view more"

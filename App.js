@@ -1,4 +1,5 @@
 import React from 'react'
+import 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
 import { configureStore as createStore } from '@reduxjs/toolkit';
 import mainReducer from './src/redux/reducers/mainReducer';

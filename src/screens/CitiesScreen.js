@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { StyleSheet, View, ScrollView, TextInput, Image, TouchableHighlight, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import citiesActions from '../redux/actions/citiesActions';
+import tw from 'twrnc';
 
 
 const CitiesScreen = (props) => {
@@ -49,13 +50,7 @@ const CitiesScreen = (props) => {
 
             {/* CONTENEDOR CITIES */}
             <View
-                style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    paddingHorizontal: 25,
-                    marginBottom: 40
-                }}
+                style={tw`flex justify-center items-center mb-10`}
             >
                 {
                     props.filter.length !== 0
@@ -67,10 +62,9 @@ const CitiesScreen = (props) => {
                                     key={city._id}
                                     onPress={() => handleID(city._id)}
                                 >
-
                                     <Image
                                         source={{ uri: city.image }}
-                                        style={{ width: 400, height: 200, borderRadius: 20, marginBottom: 25 }}
+                                        style={{ width: 380, height: 200, borderRadius: 20, marginBottom: 25 }}
                                     />
                                 </TouchableHighlight>
                             )

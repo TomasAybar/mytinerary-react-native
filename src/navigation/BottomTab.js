@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import { MyStack } from './stackNavigator';
 // Screens
 import HomeScreen from '../screens/HomeScreen';
 import CitiesScreen from '../screens/CitiesScreen';
@@ -15,12 +15,12 @@ export const BottomTab = () => {
         <Tab.Navigator screenOptions={{
             headerShown: false
         }}>
-            <Tab.Screen name='Home' component={ HomeScreen } />
-            <Tab.Screen name='Cities' component={ CitiesScreen } />
-            <Tab.Screen name='Details' component={ DetailsScreen } />
-            <Tab.Screen name='Sign up' component={ SignupScreen } />
-            <Tab.Screen name='ActivityComment' component={ ActivityCommentScreen } />
-            
+            <Tab.Screen name='Home' component={HomeScreen} />
+            <Tab.Screen name='Cities' component={CitiesScreen} />
+            <Tab.Screen name='Details' component={DetailsScreen} />
+            <Tab.Screen name='Sign up' component={SignupScreen} />
+            <Tab.Screen name='ActivityComment' component={ActivityCommentScreen} />
+
         </Tab.Navigator>
     );
 }
