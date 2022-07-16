@@ -24,11 +24,8 @@ const DetailsScreen = (props) => {
 
   const navigation = useNavigation();
 
-  const viewActivityAndComment = (tinerary) => {
-    // console.log(tinerary)
-    navigation.navigate('ActivityComment', { tinerary })
-  }
-
+  const viewActivityAndComment = (tinerary) => navigation.navigate('ActivityComment', { tinerary })
+    
   return (
 
     <ScrollView style={{ paddingVertical: 40, backgroundColor: '#3a5ba0' }}>
@@ -114,5 +111,3 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailsScreen);
-
-// export default DetailsScreen

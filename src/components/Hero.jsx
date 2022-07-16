@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View, Alert, ScrollView, Image } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 
 const Hero = () => {
@@ -21,7 +21,6 @@ const Hero = () => {
                 onPress={() => navigation.navigate('Cities')}
             />
 
-            {/* <StatusBar style="auto" /> */}
 
         </View>
     )

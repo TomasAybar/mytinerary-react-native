@@ -8,7 +8,6 @@ const ActivityCommentScreen = (props) => {
 
     const [activities, setActivities] = useState() // guardo mis actividades
     const { tinerary } = props.route.params // itinerario
-    // console.log(tinerary)
 
     useEffect(() => {
 
@@ -18,8 +17,7 @@ const ActivityCommentScreen = (props) => {
         // eslint-disable-next-line
 
     }, [tinerary._id])
-    // console.log(activities)
-    // console.log('ACTIVITIES ----', activities)
+
     return (
         <ScrollView style={{ backgroundColor: '#3a5ba0', paddingVertical: 25 }}>
 
@@ -101,4 +99,3 @@ const mapDispatchToProps = {
 }
 
 export default connect(null, mapDispatchToProps)(ActivityCommentScreen);
-// export default ActivityCommentScreen

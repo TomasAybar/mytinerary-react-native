@@ -9,7 +9,6 @@ const Carousel = (props) => {
 
 
     const dataImage = props.cities?.map(city => city.image)
-    // console.log(dataImage)
 
 
     return (
@@ -86,4 +85,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, null)(Carousel)
-// export default Carousel;

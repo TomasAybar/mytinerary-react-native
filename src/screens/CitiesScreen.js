@@ -18,10 +18,8 @@ const CitiesScreen = (props) => {
 
     const navigation = useNavigation();
 
-    const handleID = (id) => {
-        // console.log(id)
-        navigation.navigate('Details', { id })
-    }
+    const handleID = (id) => navigation.navigate('Details', { id })
+    
 
     return (
 
@@ -62,10 +60,11 @@ const CitiesScreen = (props) => {
                                 <TouchableHighlight
                                     key={city._id}
                                     onPress={() => handleID(city._id)}
+                                    style={{ marginBottom: 25, borderRadius: 20 }}
                                 >
                                     <Image
                                         source={{ uri: city.image }}
-                                        style={{ width: 380, height: 200, borderRadius: 20, marginBottom: 25 }}
+                                        style={{ width: 380, height: 200, borderRadius: 20 }}
                                     />
                                 </TouchableHighlight>
                             )
@@ -93,19 +92,6 @@ const CitiesScreen = (props) => {
     )
 }
 
-const styles = StyleSheet.create({
-
-    cities: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        paddingHorizontal: 20,
-        borderRadius: 20
-    },
-
-});
-
 const mapStateToProps = (state) => {
     return {
         cities: state.citiesReducer.cities, // accedo a todas las ciudades
@@ -119,5 +105,4 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CitiesScreen);
-// export default Cities
 

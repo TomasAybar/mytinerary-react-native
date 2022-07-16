@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View, Alert, ScrollView } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 const Connect = () => {
     return (
