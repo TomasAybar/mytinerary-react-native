@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        height: 760
+        height: 800
 
     },
 

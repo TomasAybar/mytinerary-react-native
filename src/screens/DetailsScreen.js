@@ -25,6 +25,7 @@ const DetailsScreen = (props) => {
   const navigation = useNavigation();
 
   const viewActivityAndComment = (tinerary) => {
+    // console.log(tinerary)
     navigation.navigate('ActivityComment', { tinerary })
   }
 
@@ -42,6 +43,7 @@ const DetailsScreen = (props) => {
           ?
           (
             tineraries?.map((tinerary, index) => {
+              let likes = `❤ ${tinerary.likes.length}`
               return (
                 <View style={{ paddingHorizontal: 30, marginBottom: 40, paddingVertical: 20 }} key={index}>
 
@@ -56,20 +58,16 @@ const DetailsScreen = (props) => {
                       avatarSource={{ uri: tinerary.userPhoto }}
 
                     />
-
                     <CardContent text={tinerary.hashtags} />
-                    <CardContent text={tinerary.price} />
-                    <CardContent text={tinerary.time} />
+
+                      <CardContent text={tinerary.price} />
+                      <CardContent text={tinerary.time} />
+                      <CardContent text={likes} />
 
                     <CardAction
                       separator={true}
                       inColumn={false}
-                      >
-                      {/* <CardButton
-                        onPress={() => { }}
-                        title="like"
-                        color="blue"
-                      /> */}
+                    >
                       <CardButton
                         onPress={() => { viewActivityAndComment(tinerary) }}
                         title="view more"

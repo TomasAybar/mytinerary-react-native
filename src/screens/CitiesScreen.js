@@ -19,6 +19,7 @@ const CitiesScreen = (props) => {
     const navigation = useNavigation();
 
     const handleID = (id) => {
+        // console.log(id)
         navigation.navigate('Details', { id })
     }
 
